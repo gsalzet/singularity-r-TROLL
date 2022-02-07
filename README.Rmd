@@ -1,0 +1,55 @@
+---
+title: "Template Singularity container"
+author: Sylvain Schmitt
+date: April 28, 2021
+output:
+  github_document: default
+---
+
+```{r setup, include=FALSE}
+rm(list = ls()) ; invisible(gc()) ; set.seed(42)
+library(knitr)
+library(kableExtra)
+if(knitr:::is_html_output()) options(knitr.table.format = "html") 
+if(knitr:::is_latex_output()) options(knitr.table.format = "latex") 
+library(tidyverse)
+theme_set(bayesplot::theme_default())
+opts_chunk$set(echo = F, message = F, warning = F, fig.height = 6, fig.width = 8,
+               cache = F, cache.lazy = F)
+```
+
+**Bionformatics package Template**
+
+Template is a set of utilities that Blah.
+
+Template Version: X.X.X
+
+[URL]
+
+Singularity container based on the recipe: Singularity.template.def
+
+Package installation using Miniconda3 V4.7.12
+
+Image singularity (V>=3.3) is automatically test and built and pushed on the registry using 
+[test.yml](https://github.com/sylvainschmitt/singularity-template/blob/main/.github/workflows/test.yml) &
+[builder.yml](https://github.com/sylvainschmitt/singularity-template/blob/main/.github/workflows/builder.yml)
+
+**build**:
+
+```{bash, echo=T, eval=F}
+sudo singularity build Singularity img.sif
+```
+
+**pull**:
+
+```{bash, echo=T, eval=F}
+singularity pull https://github.com/sylvainschmitt/singularity-template/releases/download/0.0.4/sylvainschmitt-singularity-template.latest.sif
+```
+
+**snakemake**:
+
+```{python, echo=T, eval=F}
+    singularity: 
+        "https://github.com/sylvainschmitt/singularity-template/releases/download/0.0.4/sylvainschmitt-singularity-template.latest.sif"
+```
+
