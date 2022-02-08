@@ -65,7 +65,7 @@ jobs:
       - name: Upload Release Assets
         if: ${{ env.release_tag != env.latest_tag }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
           tag_name: ${{ env.release_tag }}
         run: |

@@ -1,25 +1,22 @@
-Bootstrap: docker
-From :  continuumio/miniconda3
-IncludeCmd : yes
-
-%files
-environment.yml
-
-%post
-apt-get update && apt-get install -y procps && apt-get clean -y
-/opt/conda/bin/conda env create -n myEnv -f /environment.yml 
-/opt/conda/bin/conda clean -a
-
-%environment
-export PATH=/opt/conda/bin:$PATH
-. /opt/conda/etc/profile.d/conda.sh
-conda activate myEnv
-
-%runscript
-echo "hello this is a template build."
-
-%help
-Tools for Snakemake template
+BootStrap: shub
+From: tpall/singularity-r:4.0.3
 
 %labels
-Author Sylvain Schmitt
+  Author Salzet Guillaume
+
+%help
+  This will run rcontroll and other utilities from R packages
+
+%post
+  apt-get update -qq \
+    && apt-get install -y \
+    --no-install-recommends \
+    libudunits2-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libgdal-dev \
+    libgsl-dev \
+    libnode-dev \
+    && Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'devtools', 'coda','entropart','fitdistrplus'), dependencies = c('Depends', 'Imports', 'LinkingTo'))" \
+    && Rscript -e "devtools::install_github("sylvainschmitt/rcontroll")" \
+    && rm -rf /tmp/downloaded_packages/ /tmp/*.rds

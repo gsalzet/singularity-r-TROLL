@@ -1,7 +1,7 @@
 ---
 title: "Template Singularity container"
-author: Sylvain Schmitt
-date: April 28, 2021
+author: Salzet Guillaume
+date: February 07, 2022
 output:
   github_document: default
 ---
@@ -18,9 +18,9 @@ opts_chunk$set(echo = F, message = F, warning = F, fig.height = 6, fig.width = 8
                cache = F, cache.lazy = F)
 ```
 
-**Bionformatics package Template**
+**rcontroll package Template**
 
-Template is a set of utilities that Blah.
+Template is a set of utilities that allow to use rcontroll.
 
 Template Version: X.X.X
 
@@ -31,8 +31,8 @@ Singularity container based on the recipe: Singularity.template.def
 Package installation using Miniconda3 V4.7.12
 
 Image singularity (V>=3.3) is automatically test and built and pushed on the registry using 
-[test.yml](https://github.com/sylvainschmitt/singularity-template/blob/main/.github/workflows/test.yml) &
-[builder.yml](https://github.com/sylvainschmitt/singularity-template/blob/main/.github/workflows/builder.yml)
+[test.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/test.yml) &
+[builder.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/builder.yml)
 
 **build**:
 
@@ -43,13 +43,13 @@ sudo singularity build Singularity img.sif
 **pull**:
 
 ```{bash, echo=T, eval=F}
-singularity pull https://github.com/sylvainschmitt/singularity-template/releases/download/0.0.4/sylvainschmitt-singularity-template.latest.sif
+singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-template.latest.sif
 ```
 
 **snakemake**:
 
 ```{python, echo=T, eval=F}
     singularity: 
-        "https://github.com/sylvainschmitt/singularity-template/releases/download/0.0.4/sylvainschmitt-singularity-template.latest.sif"
+        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-template.latest.sif"
 ```
 
