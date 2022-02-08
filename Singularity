@@ -18,5 +18,5 @@ From: tpall/singularity-r:4.0.3
     libgsl-dev \
     libnode-dev \
     && Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'devtools', 'coda','entropart','fitdistrplus'), dependencies = c('Depends', 'Imports', 'LinkingTo'))" \
-    && Rscript -e "devtools::install_github("sylvainschmitt/rcontroll")" \
+    && Rscript -e "devtools::install_github('sylvainschmitt/rcontroll')" \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
