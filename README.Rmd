@@ -1,5 +1,5 @@
 ---
-title: "Template Singularity container"
+title: "rcontroll Singularity container"
 author: Salzet Guillaume
 date: February 07, 2022
 output:
@@ -22,7 +22,7 @@ opts_chunk$set(echo = F, message = F, warning = F, fig.height = 6, fig.width = 8
 
 Template is a set of utilities that allow to use rcontroll.
 
-Template Version: X.X.X
+Template Version: 0.0.1
 
 [URL]
 
@@ -37,7 +37,7 @@ Image singularity (V>=3.3) is automatically test and built and pushed on the reg
 **build**:
 
 ```{bash, echo=T, eval=F}
-sudo singularity build Singularity img.sif
+sudo singularity build TROLL_utilities.sif Singularity
 ```
 
 **pull**:

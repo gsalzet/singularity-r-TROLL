@@ -1,5 +1,5 @@
 BootStrap: shub
-From: tpall/singularity-r:4.0.3
+From: tpall/singularity-r:latest
 
 %labels
   Author Salzet Guillaume
@@ -17,6 +17,6 @@ From: tpall/singularity-r:4.0.3
     libgdal-dev \
     libgsl-dev \
     libnode-dev \
-    && Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'devtools', 'coda','entropart','fitdistrplus'), dependencies = c('Depends', 'Imports', 'LinkingTo'))" \
-    && Rscript -e "devtools::install_github('sylvainschmitt/rcontroll')" \
+    && Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'devtools', 'coda','entropart','fitdistrplus','Rcpp'), dependencies = c('Depends', 'Imports', 'LinkingTo'))" \
+    && Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev')" \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
