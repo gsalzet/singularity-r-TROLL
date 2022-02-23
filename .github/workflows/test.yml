@@ -2,7 +2,9 @@ name: singularity-deploy-test
 
 # run on creation of a release tag
 on:
-  pull_request: []
+  pull_request: 
+  - "main"
+  - "dev"
 
 jobs:
   builder:
