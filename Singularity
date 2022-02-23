@@ -50,7 +50,7 @@ From: ubuntu:18.04
     libssl-dev \
     libxml2-dev \
     libcairo2-dev \
-    libxt-dev \
+    libxt-dev
 
   # Add a default CRAN mirror
   echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/lib/R/etc/Rprofile.site
@@ -63,6 +63,10 @@ From: ubuntu:18.04
   rm -rf /var/lib/apt/lists/*
   
   # Install r packages
+  add-apt-repository ppa:cran/v8
+  add-apt-repository ppa:cran/libgit2
+  apt -f install
+  apt update && apt dist-upgrade -y
   apt-get update -qq 
   apt-get install -y \
     --no-install-recommends \
@@ -71,7 +75,7 @@ From: ubuntu:18.04
     libssl-dev \
     libgdal-dev \
     libgsl-dev \
-    libgit2-dev 
+    libgit2-dev
   Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   Rscript -e "devtools::install_github('gsalzet/rcontroll@dev',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','Rcpp'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
