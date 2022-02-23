@@ -50,8 +50,7 @@ From: ubuntu:18.04
     libssl-dev \
     libxml2-dev \
     libcairo2-dev \
-    libxt-dev \
-    libcurl4-gnutls-dev
+    libxt-dev
 
   # Add a default CRAN mirror
   echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/lib/R/etc/Rprofile.site
