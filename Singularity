@@ -65,14 +65,16 @@ From: ubuntu:18.04
   # Install r packages
   add-apt-repository ppa:cran/v8
   apt-get autoremove
-  apt-get remove libcurl4
+  apt-get remove libcurl4 -y
   apt-get update -qq 
   apt-get install -y \
     --no-install-recommends \
     libudunits2-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
     libgdal-dev \
     libgsl-dev \
-    libgit2-dev 
+    libgit2-dev
   Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   Rscript -e "devtools::install_github('gsalzet/rcontroll@dev',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','Rcpp'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
