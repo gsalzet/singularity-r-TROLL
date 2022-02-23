@@ -64,6 +64,7 @@ From: ubuntu:18.04
   
   # Install r packages
   add-apt-repository ppa:cran/v8
+  add-apt-repository ppa:cran/libgit2
   apt -f install
   apt update && apt dist-upgrade -y
   apt-get update -qq 
