@@ -66,6 +66,9 @@ From: ubuntu:18.04
   add-apt-repository ppa:cran/v8
   apt-get autoremove
   apt-get remove libcurl4 -y
+  apt-get install -y \
+  libcurl4 \
+  libcurl4-gnutls-dev
   apt-get update -qq 
   apt-get install -y \
     --no-install-recommends \
