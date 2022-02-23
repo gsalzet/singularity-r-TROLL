@@ -65,7 +65,7 @@ From: ubuntu:18.04
   # Install r packages
   add-apt-repository ppa:cran/v8
   apt -f install
-  apt update && apt dist-upgrade
+  apt update && apt dist-upgrade -y
   apt-get update -qq 
   apt-get install -y \
     --no-install-recommends \
