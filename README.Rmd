@@ -1,5 +1,5 @@
 ---
-title: "Template Singularity container"
+title: "rcontroll singularity container"
 author: Salzet Guillaume
 date: February 07, 2022
 output:
@@ -18,17 +18,43 @@ opts_chunk$set(echo = F, message = F, warning = F, fig.height = 6, fig.width = 8
                cache = F, cache.lazy = F)
 ```
 
-**rcontroll package Template**
+**R, rcontroll and calibration packages**
 
-Template is a set of utilities that allow to use rcontroll.
+This container includes:
 
-Template Version: X.X.X
+* `R` 4.1.2
+* `tidyverse` 1.3.0
+* `Biostrings` 2.58.0
+* `vcfR` 1.12.0
+* `vroom` 1.3.2
+* `csv2sql` 0.1.0
+* `reshape2` 1.4.4
 
-[URL]
+The `tidyverse` is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
 
-Singularity container based on the recipe: Singularity.template.def
+[https://www.tidyverse.org/]
 
-Package installation using Miniconda3 V4.7.12
+`Biostrings` is a memory efficient string containers, string matching algorithms, and other utilities, for fast manipulation of large biological sequences or sets of sequences.
+
+[https://bioconductor.org/packages/release/bioc/html/Biostrings.html]
+
+The R package `vcfR` is a set of tools designed to read, write, manipulate and analyze VCF data.
+
+[https://knausb.github.io/vcfR_documentation/]
+
+`vroom` is the fastest delimited reader for R, 1.23 GB/sec.
+
+[https://vroom.r-lib.org/]
+
+The `csv2sql` is a wrapper to convert csv files to sql database. 
+
+[https://github.com/kcf-jackson/csv2sql]
+
+`reshape2` is an R package written by Hadley Wickham that makes it easy to transform data between wide and long formats.
+
+[https://seananderson.ca/2013/10/19/reshape/]
+
+Singularity container based on the recipe: [`Singularity`](https://github.com/gsalzet/singularity-r-bioinfo/blob/main/Singularity)
 
 Image singularity (V>=3.3) is automatically test and built and pushed on the registry using 
 [test.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/test.yml) &
@@ -43,13 +69,13 @@ sudo singularity build Singularity img.sif
 **pull**:
 
 ```{bash, echo=T, eval=F}
-singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-template.latest.sif
+singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif
 ```
 
 **snakemake**:
 
 ```{python, echo=T, eval=F}
     singularity: 
-        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-template.latest.sif"
+        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif"
 ```
 
