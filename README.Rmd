@@ -1,5 +1,5 @@
 ---
-title: "rcontroll singularity container"
+title: "rcontroll Singularity container"
 author: Salzet Guillaume
 date: February 07, 2022
 output:
@@ -46,7 +46,9 @@ Initial bootstrap : [`docker://ubuntu:18:04`](https://hub.docker.com/_/ubuntu)
 **build**:
 
 ```{bash, echo=T, eval=F}
+
 sudo singularity build Singularity TROLL_utilities.sif
+
 ```
 
 **pull**:
