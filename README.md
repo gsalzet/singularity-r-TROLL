@@ -1,41 +1,53 @@
-Template Singularity container
+rcontroll singularity container
 ================
 Salzet Guillaume
 February 07, 2022
 
-**rcontroll package Template**
+**R, rcontroll and calibration packages**
 
-Template is a set of utilities that allow to use rcontroll.
+Repository based on public template
+[`sylvainschmitt/singularity-template`](https://github.com/sylvainschmitt/singularity-template)
 
-Template Version: X.X.X
+This container includes:
 
-\[URL\]
+-   `R` 4.1.2
+-   `rcontroll` 0.1.0
+-   `tidyverse` 1.3.1
+-   `sf` 1.0-5
+-   `sp` 1.4-6
+-   `hetGP` 1.1.4
+-   `coda` 0.19-4
+-   `entropart` 1.6-8
+-   `fitdistrplus` 1.1-6
+-   `ForestGapR` 0.1.6
 
-Singularity container based on the recipe: Singularity
+Singularity container based on the recipe:
+[`Singularity`](https://github.com/gsalzet/singularity-r-TROLL/blob/main/Singularity)
 
-Package installation using Miniconda3 V4.7.12
-
-Image singularity (V\>=3.3) is automatically test and built and pushed
-on the registry using
-[test.yml](https://github.com/sylvainschmitt/singularity-template/blob/main/.github/workflows/test.yml)
+Image singularity (V&gt;=3.6.4) is automatically test and built and
+pushed on the registry using
+[test.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/test.yml)
 &
-[builder.yml](https://github.com/sylvainschmitt/singularity-template/blob/main/.github/workflows/builder.yml)
+[builder.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/builder.yml)
+
+Initial bootstrap :
+[`docker://ubuntu:18:04`](https://hub.docker.com/_/ubuntu)
 
 **build**:
 
 ``` bash
-sudo singularity build Singularity img.sif
+sudo singularity build Singularity TROLL_utilities.sif
 ```
 
 **pull**:
 
 ``` bash
-singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-template.latest.sif
+singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif
 ```
 
 **snakemake**:
 
 ``` python
     singularity: 
-        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-template.latest.sif"
+        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif"
 ```

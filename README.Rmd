@@ -20,50 +20,33 @@ opts_chunk$set(echo = F, message = F, warning = F, fig.height = 6, fig.width = 8
 
 **R, rcontroll and calibration packages**
 
+Repository based on public template [`sylvainschmitt/singularity-template`](https://github.com/sylvainschmitt/singularity-template)
+
 This container includes:
 
 * `R` 4.1.2
-* `tidyverse` 1.3.0
-* `Biostrings` 2.58.0
-* `vcfR` 1.12.0
-* `vroom` 1.3.2
-* `csv2sql` 0.1.0
-* `reshape2` 1.4.4
+* `rcontroll` 0.1.0
+* `tidyverse` 1.3.1
+* `sf` 1.0-5
+* `sp` 1.4-6
+* `hetGP` 1.1.4
+* `coda` 0.19-4
+* `entropart` 1.6-8
+* `fitdistrplus` 1.1-6
+* `ForestGapR` 0.1.6
 
-The `tidyverse` is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+Singularity container based on the recipe: [`Singularity`](https://github.com/gsalzet/singularity-r-TROLL/blob/main/Singularity)
 
-[https://www.tidyverse.org/]
-
-`Biostrings` is a memory efficient string containers, string matching algorithms, and other utilities, for fast manipulation of large biological sequences or sets of sequences.
-
-[https://bioconductor.org/packages/release/bioc/html/Biostrings.html]
-
-The R package `vcfR` is a set of tools designed to read, write, manipulate and analyze VCF data.
-
-[https://knausb.github.io/vcfR_documentation/]
-
-`vroom` is the fastest delimited reader for R, 1.23 GB/sec.
-
-[https://vroom.r-lib.org/]
-
-The `csv2sql` is a wrapper to convert csv files to sql database. 
-
-[https://github.com/kcf-jackson/csv2sql]
-
-`reshape2` is an R package written by Hadley Wickham that makes it easy to transform data between wide and long formats.
-
-[https://seananderson.ca/2013/10/19/reshape/]
-
-Singularity container based on the recipe: [`Singularity`](https://github.com/gsalzet/singularity-r-bioinfo/blob/main/Singularity)
-
-Image singularity (V>=3.3) is automatically test and built and pushed on the registry using 
+Image singularity (V>=3.6.4) is automatically test and built and pushed on the registry using 
 [test.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/test.yml) &
 [builder.yml](https://github.com/gsalzet/singularity-template/blob/main/.github/workflows/builder.yml)
+
+Initial bootstrap : [`docker://ubuntu:18:04`](https://hub.docker.com/_/ubuntu)
 
 **build**:
 
 ```{bash, echo=T, eval=F}
-sudo singularity build Singularity img.sif
+sudo singularity build Singularity TROLL_utilities.sif
 ```
 
 **pull**:
