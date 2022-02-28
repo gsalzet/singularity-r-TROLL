@@ -77,6 +77,7 @@ From: ubuntu:18.04
     libgsl-dev \
     libgit2-dev
   Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
+
   Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   Rscript -e "devtools::install_github('VincyaneBadouard/LoggingLab',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
   Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','ForestGapR','lhs'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 

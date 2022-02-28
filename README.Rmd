@@ -1,7 +1,7 @@
 ---
-title: "rcontroll singularity container"
+title: "rcontroll Singularity container"
 author: Salzet Guillaume
-date: February 07, 2022
+date: February 28, 2022
 output:
   github_document: default
 ---
@@ -48,19 +48,21 @@ Initial bootstrap : [`docker://ubuntu:18:04`](https://hub.docker.com/_/ubuntu)
 **build**:
 
 ```{bash, echo=T, eval=F}
+
 sudo singularity build Singularity TROLL_utilities.sif
+
 ```
 
 **pull**:
 
 ```{bash, echo=T, eval=F}
-singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif
+singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.2/gsalzet-singularity-r-TROLL.latest.sif
 ```
 
 **snakemake**:
 
 ```{python, echo=T, eval=F}
     singularity: 
-        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif"
+        "https://github.com/gsalzet/singularity-template/releases/download/0.0.2/gsalzet-singularity-r-TROLL.latest.sif"
 ```
 
