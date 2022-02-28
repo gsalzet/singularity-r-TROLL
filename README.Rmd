@@ -34,6 +34,8 @@ This container includes:
 * `entropart` 1.6-8
 * `fitdistrplus` 1.1-6
 * `ForestGapR` 0.1.6
+* `lhs` 1.1.3
+* `LoggingLab` 0.0.0.9003
 
 Singularity container based on the recipe: [`Singularity`](https://github.com/gsalzet/singularity-r-TROLL/blob/main/Singularity)
 
