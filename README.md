@@ -1,7 +1,7 @@
-rcontroll singularity container
+rcontroll Singularity container
 ================
 Salzet Guillaume
-February 07, 2022
+February 28, 2022
 
 **R, rcontroll and calibration packages**
 
@@ -20,6 +20,8 @@ This container includes:
 -   `entropart` 1.6-8
 -   `fitdistrplus` 1.1-6
 -   `ForestGapR` 0.1.6
+-   `lhs` 1.1.3
+-   `LoggingLab` 0.0.0.9003
 
 Singularity container based on the recipe:
 [`Singularity`](https://github.com/gsalzet/singularity-r-TROLL/blob/main/Singularity)
@@ -42,12 +44,12 @@ sudo singularity build Singularity TROLL_utilities.sif
 **pull**:
 
 ``` bash
-singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif
+singularity pull https://github.com/gsalzet/singularity-template/releases/download/0.0.2/gsalzet-singularity-r-TROLL.latest.sif
 ```
 
 **snakemake**:
 
 ``` python
     singularity: 
-        "https://github.com/gsalzet/singularity-template/releases/download/0.0.1/gsalzet-singularity-r-TROLL.latest.sif"
+        "https://github.com/gsalzet/singularity-template/releases/download/0.0.2/gsalzet-singularity-r-TROLL.latest.sif"
 ```
