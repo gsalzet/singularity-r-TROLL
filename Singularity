@@ -1,5 +1,5 @@
 BootStrap: docker
-From: ubuntu:18.04
+From: ubuntu:20.04
 
 %labels
   Author Salzet Guillaume
@@ -63,7 +63,6 @@ From: ubuntu:18.04
   rm -rf /var/lib/apt/lists/*
   
   # Install r packages
-  add-apt-repository ppa:cran/v8
   add-apt-repository ppa:cran/libgit2
   apt -f install
   apt update && apt dist-upgrade -y
@@ -79,7 +78,5 @@ From: ubuntu:18.04
   Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
 
   Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
-  Rscript -e "devtools::install_github('VincyaneBadouard/LoggingLab',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
-  Rscript -e "devtools::install_github('ErikKusch/KrigR',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
-  Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','ForestGapR','lhs'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
+  
   rm -rf /tmp/downloaded_packages/ /tmp/*.rds
