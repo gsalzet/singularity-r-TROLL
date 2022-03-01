@@ -80,7 +80,6 @@ From: ubuntu:18.04
 
   Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   Rscript -e "devtools::install_github('VincyaneBadouard/LoggingLab',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
-  Rscript -e "Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
-devtools::install_github('ErikKusch/KrigR',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
+  Rscript -e "devtools::install_github('ErikKusch/KrigR',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
   Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','ForestGapR','lhs'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
   rm -rf /tmp/downloaded_packages/ /tmp/*.rds
