@@ -1,5 +1,5 @@
 BootStrap: docker
-From: ubuntu:20.04
+From: ubuntu:18.04
 
 %labels
   Author Salzet Guillaume
@@ -75,8 +75,10 @@ From: ubuntu:20.04
     libgdal-dev \
     libgsl-dev \
     libgit2-dev
-  Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
+  Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'))" 
 
-  Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev',upgrade = 'always',force = TRUE, dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')" 
-  
+  Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev', dependencies = c('Depends', 'Imports', 'LinkingTo'))" 
+    Rscript -e "install.packages(c('tidyverse', 'sf', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','ForestGapR','lhs'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
+  Rscript -e "devtools::install_github('VincyaneBadouard/LoggingLab', dependencies = c('Depends', 'Imports', 'LinkingTo'))"
+  Rscript -e "devtools::install_github('ErikKusch/KrigR', dependencies = c('Depends', 'Imports', 'LinkingTo'))"
   rm -rf /tmp/downloaded_packages/ /tmp/*.rds
