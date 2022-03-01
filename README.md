@@ -21,6 +21,7 @@ This container includes:
 -   `fitdistrplus` 1.1-6
 -   `ForestGapR` 0.1.6
 -   `lhs` 1.1.3
+-   `KrigR` 0.1.2
 -   `LoggingLab` 0.0.0.9003
 
 Singularity container based on the recipe:
