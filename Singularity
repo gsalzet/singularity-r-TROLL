@@ -76,8 +76,7 @@ From: ubuntu:18.04
     libgsl-dev \
     libgit2-dev \
     libsodium-dev \
-    snap
-  snap install cmake --classic
+    cmake
   Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'))" 
   Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev', dependencies = c('Depends', 'Imports', 'LinkingTo'))" 
   Rscript -e "devtools::install_github('r-spatial/sf', dependencies = c('Depends', 'Imports', 'LinkingTo'))"
