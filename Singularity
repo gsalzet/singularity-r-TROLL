@@ -1,5 +1,5 @@
 BootStrap: docker
-From: ubuntu:18.04
+From: ubuntu:20.04
 
 %labels
   Author Salzet Guillaume
@@ -17,16 +17,17 @@ From: ubuntu:18.04
   exec R "${@}"
 
 %post
-  # Software versions
-  export R_VERSION=4.1.2
 
   # Get dependencies
   apt-get update
+  apt-get install -y apt-utils
+  apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
   apt-get install -y --no-install-recommends \
     locales \
     gnupg \
     software-properties-common \
     apt-utils
+  apt -f install
 
   # Configure default locale
   echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -36,9 +37,8 @@ From: ubuntu:18.04
   export LANG=en_US.UTF-8
 
   # Install R
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
-  apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
+  #apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  #add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
   apt-get install -y --no-install-recommends --allow-unauthenticated \
     r-base \
     r-base-core \
@@ -80,7 +80,7 @@ From: ubuntu:18.04
   Rscript -e "install.packages('devtools', dependencies = c('Depends', 'Imports', 'LinkingTo'))" 
   Rscript -e "devtools::install_github('sylvainschmitt/rcontroll@dev', dependencies = c('Depends', 'Imports', 'LinkingTo'))" 
   Rscript -e "devtools::install_github('r-spatial/sf', dependencies = c('Depends', 'Imports', 'LinkingTo'))"
-    Rscript -e "install.packages(c('tidyverse', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','ForestGapR','lhs'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
+    Rscript -e "install.packages(c('tidyverse', 'sp', 'hetGP', 'coda','entropart','fitdistrplus','ForestGapR','lhs','rstatix'), dependencies = c('Depends', 'Imports', 'LinkingTo'),repos='http://cran.us.r-project.org')"
   Rscript -e "devtools::install_github('VincyaneBadouard/LoggingLab', dependencies = c('Depends', 'Imports', 'LinkingTo'))"
   Rscript -e "devtools::install_github('ErikKusch/KrigR', dependencies = c('Depends', 'Imports', 'LinkingTo'))"
   rm -rf /tmp/downloaded_packages/ /tmp/*.rds
