@@ -20,7 +20,8 @@ From: ubuntu:20.04
 
   # Get dependencies
   apt-get update
-  apt-get install -y apt-utils
+  apt-get install -y apt-utils \
+    dialog
   apt-get update && DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" apt-get install -y tzdata
   apt-get install -y --no-install-recommends \
     locales \
@@ -37,8 +38,8 @@ From: ubuntu:20.04
   export LANG=en_US.UTF-8
 
   # Install R
-  #apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-  #add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
   apt-get install -y --no-install-recommends --allow-unauthenticated \
     r-base \
     r-base-core \
